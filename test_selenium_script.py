@@ -1,20 +1,18 @@
-import time
 import unittest
-
-from appium import webdriver
+import time
+import pyautogui
 
 
 class sut_test_via_jenkins(unittest.TestCase):
 
     def setUp(self) -> None:
-        _desired_capabilities = dict(app='Notepad.exe')
-        self.driver = webdriver.Remote(command_executor='http://127.0.0.1:4723',
-                                       desired_capabilities=_desired_capabilities)
-        self.driver.implicitly_wait(time_to_wait=30)
-
+        pyautogui.hotkey('win','r')
+        pyautogui.typewrite('notepad')
+        pyautogui.press('enter')
     def test_sut(self):
-        self.driver.maximize_window()
-        time.sleep(15)
+        pyautogui.hotkey('alt','space','f4')
+        pyautogui.typewrite('YOUR SLAVE CONFIGURATION IS SUCCESSFULLY UP AND RUNNING')
+        time.sleep(5)
 
     def tearDown(self) -> None:
-        self.driver.quit()
+        pyautogui.hotkey('alt','f4')
