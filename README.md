@@ -1,5 +1,5 @@
 # Make-Me-Slave
-# Jenkins Slave Setup and Regression Test Execution Script
+# Jenkins Slave Setup
 
 This script facilitates the seamless addition of a System Under Test (SUT) as a Jenkins slave  With a combination of API calls and automation, you can effortlessly integrate new SUTs into your Jenkins environment and run regression tests without manual intervention.
 
